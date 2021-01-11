@@ -11,6 +11,6 @@ app.use(cors({
     credentials: true
 }))
 
-const lottery = require('./test')
+const lottery = require('./lottery')
 app.use(lottery);
 app.listen(PORT, () => console.log(`Server is ready! => ${PORT}`))
