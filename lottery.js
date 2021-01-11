@@ -9,20 +9,13 @@ router.get('/lotto/lastest', async (req, res) => {
 })
 
 router.post('/lotto/check', async (req, res) => {
-    
-    const { data } = await axios.post('https://www.glo.or.th/api/checking/getcheckLotteryResult', {
-        headers: {
-            'Content-Type': 'application/json;charset=utf-8',
-        }, data: {
-            number: req.body.number,
+
+    const { data } = await axios.post('https://www.glo.or.th/api/checking/getcheckLotteryResult',
+        {
+            number:req.body.number,
             period_date: req.body.period_date
-        }
-    })
+        })
     res.send(data)
 });
-
-
-
-
 
 module.exports = router
