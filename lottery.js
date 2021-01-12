@@ -8,6 +8,15 @@ router.get('/lotto/lastest', async (req, res) => {
     res.send(data)
 })
 
+router.get('/lotto/listdate', async (req, res) => {
+
+    const { data } = await axios.post('https://www.glo.or.th/api/lottery/getPeriodsByYear',{
+        type:"CHECKED",
+        year:req.body.year
+    })
+    res.send(data)
+});
+
 router.post('/lotto/check', async (req, res) => {
 
     const { data } = await axios.post('https://www.glo.or.th/api/checking/getcheckLotteryResult',
