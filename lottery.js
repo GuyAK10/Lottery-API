@@ -16,10 +16,12 @@ router.get('/lotto/listdate', async (req, res) => {
     res.send(data)
 });
 
-router.get('/lotto/result', async (req, res) => {
+router.get('/lotto/award', async (req, res) => {
 
-    const { data } = await axios.post('https://www.glo.or.th/api/lottery/getLotteryResultByPage',{
-        page:req.body.page
+    const { data } = await axios.post('https://www.glo.or.th/api/lottery/getLotteryAward',{
+        date:"01",
+        month:"12",
+        year:"2020"
     })
     res.send(data)
 });
